@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web to Case Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f3f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .box {
+      background-color: #f1f8ff;
+      display: flex;
+      flex-direction: row;
+      width: 90%;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .form-section {
+      flex: 1;
+      padding: 40px 30px;
+    }
+
+    .form-section h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+      font-style: italic;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      background-color: #0070d2;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005bb5;
+    }
+
+    .image-section {
+      flex: 1;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .box {
+        flex-direction: column;
+      }
+      .image-section {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <div class="form-section">
+    <h2> <B>Submit a Case</B></h2>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DdL00000UmXJx" method="POST">
+      <input type="hidden" name="orgid" value="00DdL00000UmXJx">
+      <input type="hidden" name="retURL" value="http://subseltechsolutions-4a-dev-ed.develop.lightning.force.com/lightning/o/Case/home">
+
+      <label for="name">Contact Name</label>
+      <input id="name" maxlength="80" name="name" type="text" />
+
+      <label for="email">Email</label>
+      <input id="email" maxlength="80" name="email" type="text" />
+
+      <label for="phone">Phone</label>
+      <input id="phone" maxlength="40" name="phone" type="text" />
+
+      <label for="subject">Subject</label>
+      <input id="subject" maxlength="80" name="subject" type="text" />
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description"></textarea>
+
+      <input type="submit" name="submit" value="Submit Case">
+    </form>
+  </div>
+
+  <div class="image-section">
+    <img src="software installation team.png" alt="Illustration" />
+  </div>
+</div>
+
+</body>
+</html>
